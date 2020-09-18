@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+
+        .emoji{
+            font-size: 5em;
+        }
+
+        #bottom{
+            text-align: center;
+            flex-grow: 0;
+        }
+
+        #top{
+            text-align: center;
+            flex-grow: 1;
+        }
+        #left{
+            background-color: orange;
+            flex-basis: 300px;
+            display:flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        #img{
+            max-width: 100%;
+            height: auto;
+            flex-grow: auto;
+        }
+        #main{
+            flex-grow:1;
+            flex-basis: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="left">
+        <div id="top">
+            <div class="emoji">📷</div>
+            <div class="emoji">🗄️</div>
+            <div class="emoji">❤️</div>
+        </div>
+        <div id="bottom" class="emoji">🗑️</div>
+    </div>
+    <div id ="main">
+        <img src="https://picsum.photos/250/200?random=1" id="img">
+        <img src="https://picsum.photos/350/200?random=2" id="img">
+        <img src="https://picsum.photos/150/200?random=3" id="img">
+        <img src="https://picsum.photos/400/200?random=4" id="img">
+        <img src="https://picsum.photos/220/200?random=5" id="img">
+        <img src="https://picsum.photos/310/200?random=6" id="img">
+        <img src="https://picsum.photos/110/200?random=7" id="img">
+        <img src="https://picsum.photos/270/200?random=8" id="img">
+        <img src="https://picsum.photos/350/200?random=9" id="img">
+        <img src="https://picsum.photos/400/200?random=10" id="img">
+        <img src="https://picsum.photos/220/200?random=11" id="img">
+        <img src="https://picsum.photos/200/200?random=12" id="img">
+        <img src="https://picsum.photos/300/200?random=13" id="img">
+        <img src="https://picsum.photos/200/200?random=14" id="img">
+        <img src="https://picsum.photos/320/200?random=15" id="img">
+        <img src="https://picsum.photos/290/200?random=16" id="img">
+        <img src="https://picsum.photos/300/200?random=17" id="img">
+        <img src="https://picsum.photos/120/200?random=18" id="img">
+        <img src="https://picsum.photos/360/200?random=19" id="img">
+        <img src="https://picsum.photos/400/200?random=20" id="img">
+        <img src="https://picsum.photos/200/200?random=21" id="img">
+        <img src="https://picsum.photos/300/200?random=22" id="img">
+        <img src="https://picsum.photos/100/200?random=23" id="img">
+        <img src="https://picsum.photos/300/200?random=24" id="img">
+        <img src="https://picsum.photos/400/200?random=25" id="img">
+    </div>
+    
+</body>
+</html>

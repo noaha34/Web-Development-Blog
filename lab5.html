@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <style>
+        .row{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .row img:hover{
+            outline: solid black 2px;
+            z-index: 3;
+            
+        }
+        #duo{
+            width: 1000px;
+        }
+
+        #tri{
+            width: 1400px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class ="row" id = "tri">
+        <img src="https://picsum.photos/200/200?random=1">
+        <img src="https://picsum.photos/200/200?random=2">
+        <img src="https://picsum.photos/200/200?random=3">
+    </div>
+
+    <div class = "row" id = "duo">
+        <img src="https://picsum.photos/200/200?random=4">
+        <img src="https://picsum.photos/200/200?random=5">
+    </div>
+
+    <div class = "row" id = "tri">
+        <img src="https://picsum.photos/200/200?random=6">
+        <img src="https://picsum.photos/200/200?random=7">
+        <img src="https://picsum.photos/200/200?random=8">
+    </div>
+</body>
+</html>
