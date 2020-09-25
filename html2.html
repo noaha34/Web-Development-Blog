@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Week 2</title>
+    <style>
+        body{
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            background-color: white;
+            background-size: auto;
+            background-repeat: inherit;
+            display: flex;
+            flex-direction: column;
+            font-size: 2em;
+        }
+
+        
+        #code {
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        .parallax {
+ 
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            height: 100%; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }   
+
+    </style>
+</head>
+<body text="#ffffff" link="#ffffff" vlink="#ffffff">
+    <div class="parallax">
+    <header>
+        <h1>Week 2 Blog Post</h1>
+    </header>
+    <main>
+        <div>This week I wanted to find ways that I could spice up my website a little more for project 1. My client is my friend who is a graphical designer
+            so I feel like having a very aesthetically pleasing website is crucial to his image. I first looked for a bunch of portfolio websites that looked
+            good to me and I went with those. I noticed that parralax scrolling on websites has become very popular, and it looked good on the websites that I saw it
+            on. I went to my go to source, which was W3 schools, and read up on parallax scrolling. The code was some pretty simple css:
+            <pre>
+            <code id = "code">
+                .parallax {
+                    /* The image used */
+                    background-image: url('img_parallax.jpg');
+                  
+                    /* Full height */
+                    height: 100%; 
+                  
+                    /* Create the parallax scrolling effect */
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                  }
+            </code>
+        </pre>
+
+        <p>This is a fairly simple implementation and I do remember this being shown in class so if my website ends up having this element to it I 
+        plan on adding it. I actually added it to this blog post to test it out!</p>
+
+        <p>Another thing I wanted to add, but is a bit more complicated, is a fading slideshow on the homepage for featured content.
+            The idea for my client is that the content he chooses to be displayed on the home page will have a slideshow with each slide
+            being some work that he has either done or is in progress. The slideshow will be navigable (left and right) with buttons on either
+            side of the photo being displayed. I found another solution to this on W3 schools but it involves a combination of JavaScript, HTML, and CSS.
+            The javascript below is simply looping over the slide deck to determine the slide that should be displayed, and at the end looping back 
+            to the beginning.
+        </p>
+        <pre>
+            <code id = "code">
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}    
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";  
+                    dots[slideIndex-1].className += " active";
+                  }
+            </code>
+        </pre>
+        My goal is to go through more of the code that would allow me to create a slideshow on the homepage, and somehow find a way to make it so the 
+        slideshow is on autoloop whether or not the user is scrolling through it. This was something I included in my wireframe so it is defeintely something
+        I would like to include. Hope you enjoyed reading about my progress, thanks for all your help this week!<br> <br>
+            <a href="index.html">Back to home page</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p style="color: gray">CS 347</p>
+    </footer>
+</div>  
+</body>
+</html>
