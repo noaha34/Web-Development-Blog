@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Week 2</title>
+    <style>
+        body{
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            background-color: white;
+            background-size: auto;
+            background-repeat: inherit;
+            display: flex;
+            flex-direction: column;
+            font-size: 2em;
+        }
+
+        
+        #code {
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        .parallax {
+ 
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            height: 100%; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }   
+
+    </style>
+</head>
+<body text="#ffffff" link="#ffffff" vlink="#ffffff">
+    <div class="parallax">
+    <header>
+        <h1>Week 3 Blog Post</h1>
+    </header>
+    <main>
+        <div> This week I was trying to learn more about things that I could use to spice up my webpage and blog with. I talked with a few of my other friends who are also in web development
+            classes at different schools and and one of them told me about this library anime.js that has a lot of very modernized css tricks to make things look a little nicer on my page. The library
+            includes many useful javascript fucntions that help with animating things specifically. I feel that this will allow me to make things like menus opening and photos scrolling on my main page
+            automatically while the user is not scrolling through them actively. I have considered adding a splash page for when a user first navigates to the webpage that is like a loading screen. 
+            I found an example in the documentation that accomplishes the kind of thing I am looking to implement.
+            <pre>
+            <code id = "code">
+                anime({
+                    targets: '.begin-complete-demo .el',
+                    translateX: 240,
+                    delay: 1000,
+                    easing: 'easeInOutCirc',
+                    update: function(anim) {
+                      progressLogEl.value = 'progress : ' + Math.round(anim.progress) + '%';
+                      beginLogEl.value = 'began : ' + anim.began;
+                      completeLogEl.value = 'completed : ' + anim.completed;
+                    },
+                    begin: function(anim) {
+                      beginLogEl.value = 'began : ' + anim.began;
+                    },
+                    complete: function(anim) {
+                      completeLogEl.value = 'completed : ' + anim.completed;
+                    }
+                  });
+            </code>
+            </pre>
+
+        <p> A representation of this can be found in the <a href="https://animejs.com/documentation/#beginComplete">here</a>. This creates a non functional yet great aesthetic addition to the webpage
+            that I feel would serve my client for project 1 who is a graphic designer well. I want to find a way to implement this in a minimal fashion that doesnt draw too much attention away from the content
+            on display. I also found a <a href="https://animejs.com/documentation/#lineDrawing">function that animates drawing of words</a> in a very minimal way, this I figured I could use for the webpage header which is just my clients name.
+            an exmaple of how to implement this was shown on the website.
+
+        </p>
+
+        <pre>
+            <code id = "code">
+                anime({
+                    targets: '.line-drawing-demo .lines path',
+                    strokeDashoffset: [anime.setDashoffset, 0],
+                    easing: 'easeInOutSine',
+                    duration: 1500,
+                    delay: function(el, i) { return i * 250 },
+                    direction: 'alternate',
+                    loop: true
+                  });
+            </code>
+        </pre>
+        <p>
+            I would like to learn how to implement this into my webpage in a minimal way that fits my clients vision. I also hope to be able to learn these libraries and their documentation to be able to implement them in my
+            own code in the future.
+        </p>
+        <br> <br>
+            <a href="index.html">Back to home page</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p style="color: gray">CS 347</p>
+    </footer>
+</div>  
+</body>
+</html>
