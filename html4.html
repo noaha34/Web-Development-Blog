@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Week 4</title>
+    <style>
+        body{
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            background-color: white;
+            background-size: auto;
+            background-repeat: inherit;
+            display: flex;
+            flex-direction: column;
+            font-size: 2em;
+            
+        }
+
+        
+        #code {
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        .parallax {
+ 
+            background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            height: 100%; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left:5em;
+            padding: 5em;
+        }   
+
+    </style>
+</head>
+<body text="#ffffff" link="#ffffff" vlink="#ffffff">
+    <div class="parallax">
+    <header>
+        <h1>Week 5 Blog Post</h1>
+    </header>
+    <main>
+        <div> This week I was explioring more ways that people can get in touch with my client for my website project. I already have active links to his social media outlets but was looking for a more direct, managed contact form. 
+            My first thought was to get a link that automatically opens the email client on the users computer and starts an email. The solution is actually very easily implemented, with <br> 
+            <code id = "code"> a href = "mailto:name@xyz.com"</a></code><br>
+            Going off of this I figured it would be best to add this to each webpage if peoople wanted to inquire about a specific piece, it would be sent to his email. <br><br>
+
+             Another thing I explored for this week that I feel will be very useful for my client is a website update notification system. This website notification system would ping users when new projects are posted in the projects section 
+            or the featured works change for that week/month. As it turns out it seems like there are many more working parts than I imaged and there are many services that are offered that would take care of this for you similar to libraries
+            that take care of CSS or animations. One of these offered is pageclip.co which offers a serverless collection of info from users, and uses your own github repository to store data. It has integrations by email, csv, json, and slack
+            for distributing data making it a very useful engine for notiftying users. You simply point forms at the pageclip url and it will save the data for you as shown below.
+            <pre>
+            <code id = "code">
+                <xmp>
+                <form action="https://send.pageclip.co/abc123def456">
+                    <input type="text" name="name" value="Roscoe Jones"/>
+                    <input type="text" name="email" value="roscoe@example.com"/>
+                    <input type="submit" value="Send">
+                </form>
+                </xmp>
+            </code>
+            </pre>
+
+        <p> 
+            I am steadily learning that I am much more interested and excited by the backend work that goes on by websites so I am actively trying to find new ways to loop in functionality of things that I have used in the past into a website.
+            Similar to how many of my peers and I utilize the internet to find things that arent necessarily just articles about how to do things, but they show us, they interact with us, they teach us. Of course starting small is where it all begins
+            and I dont doubt that even the most talented back end developers have the fundamentals of front end design, I am just excited to learn more about the integrations of databases and things that are working in the background when we navigate websites, 
+            and maybe understand how I always seem to get ads for things I was just speaking about earlier that day! I hope that this class will give me the opportunity to get a small glimmer of these things as they exist today.
+        </p>
+        <br> <br>
+            <a href="index.html">Back to home page</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p style="color: gray">CS 347</p>
+    </footer>
+</div>  
+</body>
+</html>
