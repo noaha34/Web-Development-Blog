@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Week 6 Blog</title>
+    <style>
+        body{
+            background-image: url("background.jpg");
+            background-color: white;
+            background-size: auto;
+            background-repeat: inherit;
+            display: flex;
+            flex-direction: column;
+            font-size: 2em;
+            
+        }
+
+        
+        #code {
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        .parallax {
+ 
+            background-image: url("background.jpg");
+            height: 100%; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left:5em;
+            padding: 5em;
+        }   
+
+    </style>
+</head>
+<body text="#ffffff" link="#ffffff" vlink="#ffffff">
+    <div class="parallax">
+    <header>
+        <h1>Week 6 Blog Post</h1>
+    </header>
+    <main>
+        <div> This week, as we have been exploring javascript and its usefulness more lately, I decided to look into some cool javascript libraries. I simply searched "cool and useful javascript"
+            libraries on google and found a few that seemed promising. One of the libraries on this list was anime.js which I wrote about on a previous weeks blog post so this list seemed 
+            trustworthy. One particular library that caught my eye was the D3.js library which was excellenet for data science and data visualization, what particularly caught my attention was that
+            it this library was used by the author of the article to visulaize the COVID-19 data from Johns Hopkins, the map that many people used this summer to view the spread of coronacirus
+            accross the world. Setting up the graph element is easy and I found some snippets online that show how it is implemented:
+
+             <br><br>
+
+             
+            <pre>
+            <code id = "code">
+                
+                    // set the dimensions and margins of the graph
+                    var margin = {top: 10, right: 40, bottom: 30, left: 30},
+                        width = 450 - margin.left - margin.right,
+                        height = 400 - margin.top - margin.bottom;
+                    
+                    // append the svg object to the body of the page
+                    var sVg = d3.select("#Area")
+                      .append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                      // translate this svg element to leave some margin.
+                      .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                    
+                    // X scale and Axis
+                    var x = d3.scaleLinear()
+                        .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
+                        .range([0, width]);       // This is the corresponding value I want in Pixel
+                    sVg
+                      .append('g')
+                      .attr("transform", "translate(0," + height + ")")
+                      .call(d3.axisBottom(x));
+                    
+                    // X scale and Axis
+                    var y = d3.scaleLinear()
+                        .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
+                        .range([height, 0]);       // This is the corresponding value I want in Pixel
+                    sVg
+                      .append('g')
+                      .call(d3.axisLeft(y));
+                
+            </code>
+            </pre>
+
+        <p> 
+           My double major is in Economics, so data and data visualization is something that I would like to learn how to do if I were ever to want to organize my own website that involved some sort
+           of data models. The function scaleLinear() seems to make it very easy to size graphs as a beginner which I as a beginner would probably not have known how to do without the aid 
+           of the library. I also found a way that is somewhat similar to how canvas displays grade distributions with a box plot
+        </p>
+        <pre>
+            <code id = "code">
+                
+                // Compute summary statistics used for the box:
+                var data_sorted = data.sort(d3.ascending)
+                var q1 = d3.quantile(data_sorted, .25)
+                var median = d3.quantile(data_sorted, .5)
+                var q3 = d3.quantile(data_sorted, .75)
+                var interQuantileRange = q3 - q1
+                var min = q1 - 1.5 * interQuantileRange
+                var max = q1 + 1.5 * interQuantileRange
+                
+            </code>
+            </pre>
+            <p> 
+                The quantile function call in this example makes it very easy to compute the q1, median, and q3 sections of a box plot very simple. All in all I think that there are many uses 
+                for this library and as a person with a knack for data like me I feel that learning it will be fun!
+             </p>
+        <br> <br>
+            <a href="index.html">Back to home page</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p style="color: gray">CS 347</p>
+    </footer>
+</div>  
+</body>
+</html>
