@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Week 6 Blog</title>
+    <style>
+        body{
+            background-image: url("background.jpg");
+            background-color: white;
+            background-size: auto;
+            background-repeat: inherit;
+            display: flex;
+            flex-direction: column;
+            font-size: 2em;
+            
+        }
+
+        
+        #code {
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        .parallax {
+ 
+            background-image: url("background.jpg");
+            height: 100%; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left:5em;
+            padding: 5em;
+        }   
+
+    </style>
+</head>
+<body text="#ffffff" link="#ffffff" vlink="#ffffff">
+    <div class="parallax">
+    <header>
+        <h1>Week 6 Blog Post</h1>
+    </header>
+    <main>
+        <div> 
+            Per your recommendation I did some learning on redux for my blog post this week. It seems that it will be a very useful
+            tool to supplement what we have learned thus far, and I am exicted to get to learn more about it. Some of the content
+            in this class that we have learned after the midterm has been a little confusing to me but I have been doing my best to
+            follow along. With redux it seems that it makes the code very manageable and it clearly defined through the use of actions
+            to track what the code is doing. I was reading on redux.js.org and there were a lot fo good informative pages about 
+            getting started with redux. In the following small code snippet that they provided on their tutorial page that shows two
+            reducers being created for a webpage, and a third reducer that manages both of them for the whole app.
+             <br><br>
+            <pre>
+            <code id = "code">
+                function visibilityFilter(state = 'SHOW_ALL', action) {
+                    if (action.type === 'SET_VISIBILITY_FILTER') {
+                      return action.filter
+                    } else {
+                      return state
+                    }
+                  }
+                  
+                  function todos(state = [], action) {
+                    switch (action.type) {
+                      case 'ADD_TODO':
+                        return state.concat([{ text: action.text, completed: false }])
+                      case 'TOGGLE_TODO':
+                        return state.map((todo, index) =>
+                          action.index === index
+                            ? { text: todo.text, completed: !todo.completed }
+                            : todo
+                        )
+                      default:
+                        return state
+                    }
+                  }
+                  
+                  function todoApp(state = {}, action) {
+                    return {
+                      todos: todos(state.todos, action),
+                      visibilityFilter: visibilityFilter(state.visibilityFilter, action)
+                    }
+                  }
+                
+            </code>
+            </pre>
+
+        <p> 
+            The third function is the reducer that manages the app in this case. I understand that this is redux being implemented
+            in its simplest form but I felt like reading through the core concepts page oin the redux.js website helped me get a deeper
+            understanding of what is going on under the hood. I looked through the documentation further and found many more ways
+            in which redux can be utilized to build an efficient dynamic website like we are doing for project 2. I found one of the libraries
+            on github that was linked that they noted as very useful for manipulating datastructures. In the small snippet shown below
+            they simply have an increment and decrement function in the reducer that can be useful for managing stacks or queues in a programs.
+            
+        </p>
+        <pre>
+            <code id = "code">
+                const myCounter = counter({
+                    incrementActionTypes: ['INCREMENT'],
+                    decrementActionTypes: ['DECREMENT']
+                  })
+            </code>
+            </pre>
+            <p> 
+            I plan on going through the labs and lectures again from the twodee.org pages for our class to gain a deeper understanding 
+            of whats going on because I still am somewhat confused with the mechanics of everything, but I am confident that I will be
+            able to implement this framework in my project 2 submission. Thanks for reading!
+             </p>
+        <br> <br>
+            <a href="index.html">Back to home page</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p style="color: gray">CS 347</p>
+    </footer>
+</div>  
+</body>
+</html>
